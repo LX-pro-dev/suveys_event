@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Events</h1>
+  
+    <% @events.each do |event| %>
+      <% if event.status == 'on going' %>
+        <table>
+          <thead>
+            <tr>
+              <th>Event id</th>
+              <th>Event status</th>
+              <th>Event Total</th>
+              <th colspan="4"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= event.id %><td>    
+              <td><%= event.status %><td>
+              <td><%= event.total_event %><td>
+              <td><%= link_to 'Show', event %></td>
+              <td><%= link_to 'Edit', edit_event_path(event) %></td>
+              <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Event terminé', event, :class => "btn btn-primary" %></td>
+            </tr>
+          </tbody>
+        </table>
+      <% else if event.status == 'pending'%>
+        <h3> Event <%= event.id %>, en attente de réalisation !</h3>
+      <% else %>
+        <h3> Event <%= event.id %> en attente de remplissementage des invités</h3>
+      <% end %>
+    <% end %>
+    <% end %>
+<br>
+
+<%= link_to 'New Event', new_event_path %>

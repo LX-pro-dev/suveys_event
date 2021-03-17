@@ -1,0 +1,97 @@
+<%= form_with(model: survey, local: true) do |form| %>
+  <% if survey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
+
+      <ul>
+      <% survey.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>The <strong> tasty rate </strong></p>
+
+  <div class="field">
+    <% form.label :tasty %>
+      <div class="form-check form-check-inline" >
+        <input class="form-check-input" type="radio" name="tasty" id="tasty1" value="1">
+        <label class="form-check-label" for="tasty1">1</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="tasty" id="tasty2" value="2">
+        <label class="form-check-label" for="tasty2">2</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="tasty" id="tasty3" value="3">
+        <label class="form-check-label" for="tasty3">3</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="tasty" id="tasty4" value="4">
+        <label class="form-check-label" for="tasty4">4</label>
+      </div>
+    </div>
+
+    <p>The <strong> presentation rate </strong></p>
+    <div class="field">
+    <% form.label :presentation %>
+      <div class="form-check form-check-inline" >
+        <input class="form-check-input" type="radio" name="presentation" id="presentation1" value="1">
+        <label class="form-check-label" for="presentation1">1</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="presentation" id="presentation2" value="2">
+        <label class="form-check-label" for="presentation2">2</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="presentation" id="presentation3" value="3">
+        <label class="form-check-label" for="presentation3">3</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="presentation" id="presentation4" value="4">
+        <label class="form-check-label" for="presentation4">4</label>
+      </div>
+    </div>
+
+    <p>The <strong> atmosphere rate </strong></p>
+    <div class="field">
+    <% form.label :atmosphere %>
+      <div class="form-check form-check-inline" >
+        <input class="form-check-input" type="radio" name="atmosphere" id="atmosphere1" value="1">
+        <label class="form-check-label" for="atmosphere1">1</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="atmosphere" id="atmosphere2" value="2">
+        <label class="form-check-label" for="atmosphere2">2</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="atmosphere" id="atmosphere3" value="3">
+        <label class="form-check-label" for="atmosphere3">3</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="atmosphere" id="atmosphere4" value="4">
+        <label class="form-check-label" for="atmosphere4">4</label>
+      </div>
+    </div>
+    <input type="submit" value="Submit">
+
+  <div class="field">
+    <%= form.label :tasty %>
+    <%= form.number_field :tasty %>
+  </div>
+
+  <div class="field">
+    <%= form.label :presentation %>
+    <%= form.number_field :presentation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :atmosphere %>
+    <%= form.number_field :atmosphere %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

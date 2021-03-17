@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tasty: 1
+  presentation: 1
+  atmosphere: 1
+
+two:
+  tasty: 1
+  presentation: 1
+  atmosphere: 1
